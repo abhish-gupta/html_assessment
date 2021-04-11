@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Validation</title>
+        <link rel = "stylesheet" type="text/css" href="style1.css">
+        <script src = "clock.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#button').click(function(){
+                    var name = $('#fname').val();
+                    var email = $('#fmail').val();
+                    var comment =$('#msg').val();
+                    if(name==''||name==null||email==''||email==null||comment==''||comment==null){
+                        alert("All fields are mandatory!!!");
+                        return false;
+                    }
+                    if(email.indexOf('@')==0)
+                    {
+                        alert("Invalid email address!!");
+                        return false;
+                    }    
+                    if ((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.'))
+                    {
+                        alert("Invalid Email address!!");
+                        return false;
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body onload="startTime()">
+        
+            <div class = "header1">
+                <div class = "topnav1">
+                    <img src="logo.png">
+                    <h1>UPPER</h1>
+                    <div id = "txt" ></div>
+                    <a href="#">Contact</a>
+                    <a href="#">About us</a>
+                    <a href="#">Third Grid</a>
+                    <a href="#">Second</a>
+                    <a href="#">Gallery</a>
+                    <a href="#">Home</a>
+                </div>
+                <div class="flex-container">
+                    <div id="flex1" style="background-color: rgba(255, 255, 255,0.3 );">
+                        <h1>Contact Us</h1>
+                        <p>Praesent tempus dapibus odio nec elementum. Sed elementum</br> 
+                            est quis tortor faucibus, et molestie nibh finibus. Mauris</br>
+                            condimentum ex vestibulum fringilla consectetur.</p>
+                        
+                        <form id="form" method="post" action="">
+                            <input type="text" name="Name" placeholder ="Name" id="fname"><br>
+                            <input type="text" name="Email" placeholder="Email" id="fmail"><br>
+                            <textarea name="Comment" placeholder="Your message" id="msg"></textarea></br>
+                            <input type="submit" value="Submit" id="button">
+                        </form>
+
+                    </div>
+                    <div id="flex2" style="background-color: rgba(255, 255, 255,0.3 );">
+                        <h3>123 New Street 11000, San Fransisco, CA</h3>
+                        <img src="map.jpg" id="map">
+                    </div>
+
+                </div>
+                <div class="flex-icons">
+                    <img src="fb.jpg">
+                    <img src="gplus.jpg">
+                    <img src="insta.jpg">
+                    <img src="twitter.jpg">
+                    <img src="linkedin.jpg">
+                </div>
+                <p>Copyright © 2016 Your Company-Design:Templatemo</p>
+            </div>
+        
+    </body>
+</html>
